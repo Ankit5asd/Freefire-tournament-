@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punam's Free Fire Tournament</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Free Fire Cash Tournament</h1>
+
+        <!-- Wallet Balance -->
+        <div class="card">
+            <h2>💰 Your Wallet</h2>
+            <p>Coins: <span id="coins">0</span> ₹</p>
+            <button onclick="showWithdrawForm()">Withdraw Coins</button>
+        </div>
+
+        <!-- Deposit Section -->
+        <div class="card">
+            <h2>💳 Add Coins</h2>
+            <input type="number" id="amount" placeholder="Enter amount (min ₹10)" min="10">
+            <button onclick="showPaymentOptions()">Continue to Pay</button>
+        </div>
+
+        <!-- Payment Options -->
+        <div class="card hidden" id="paymentSection">
+            <div class="payment-method">
+                <h3>Scan QR Code</h3>
+                <div id="qrCode"></div>
+            </div>
+            
+            <div class="payment-method">
+                <h3>UPI Details</h3>
+                <p>📱 UPI ID: <strong>punamkumari0778@axl</strong></p>
+                <p>👤 Name: <strong>Punam Kumari</strong></p>
+            </div>
+
+            <div class="payment-verification">
+                <input type="text" id="trxId" placeholder="Enter Transaction ID">
+                <button onclick="verifyPayment()">Verify Payment</button>
+            </div>
+        </div>
+
+        <!-- Tournament Section -->
+        <div class="card">
+            <h2>🎮 Active Tournament</h2>
+            <p>Entry Fee: 10 coins</p>
+            <p>Reward: 4 coins/kill + 50 coins for winning duo</p>
+            <button onclick="joinTournament()">Join Now</button>
+        </div>
+    </div>
+
+    <!-- QR Code Generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <script
